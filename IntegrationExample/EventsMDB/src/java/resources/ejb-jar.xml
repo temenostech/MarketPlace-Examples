@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" version="3.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd">
+	<enterprise-beans>
+		<message-driven id="MessageDriven_EventsMDB">
+			<display-name>IntegrationFramework Event Message Driven Bean</display-name>
+			<ejb-name>IFEventMDB</ejb-name>
+			<ejb-class>com.temenos.marketplace.integration.mdb.EventsMDB</ejb-class>
+			<messaging-type>javax.jms.MessageListener</messaging-type>
+			<transaction-type>Bean</transaction-type>
+			<message-destination-type>javax.jms.Queue</message-destination-type>
+			<activation-config>
+				<activation-config-property>
+					<activation-config-property-name>acknowledgeMode</activation-config-property-name>
+					<activation-config-property-value>Auto-acknowledge</activation-config-property-value>
+				</activation-config-property>
+			</activation-config>
+		</message-driven>
+	</enterprise-beans>
+</ejb-jar>

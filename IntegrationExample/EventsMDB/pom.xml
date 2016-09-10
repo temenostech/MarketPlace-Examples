@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.temenos.marketplace.integration</groupId>
+	<artifactId>EventsMDB</artifactId>
+	<name>Temenos Integration Framework Event Message Driven Bean Sample</name>
+	<version>1.0.0</version>
+	<properties>
+		<ejb.resources.dir>src/java/resources</ejb.resources.dir>
+	</properties>
+
+	<build>
+		<sourceDirectory>src/java/main</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>${ejb.resources.dir}</directory>
+				<targetPath>META-INF</targetPath>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- <dependency> <groupId>jboss</groupId> <artifactId>jboss-j2ee</artifactId> 
+			<version>4.0.4.GA</version> <scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-j2ee</artifactId>
+			<version>4.2.2.GA</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<organization>
+		<name>Temenos Ltd</name>
+		<url>http://www.temenos.com</url>
+	</organization>
+</project>
