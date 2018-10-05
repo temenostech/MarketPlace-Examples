@@ -24,7 +24,7 @@ public class Customer {
 		String customerCode = null;
 		// create a new user from T24
 		session.registerHandler("application/atom+xml", AtomPayloadHandler.class)
-				.basicAuth("INPUTT", "123456")
+				.basicAuth("add_valid_user", "add_valid_pwd")
 				.header("Content-Type", "application/atom+xml")
 				.header("Accept", "application/atom+xml")
 				.url()
@@ -66,7 +66,7 @@ public class Customer {
 	void authoriseCustomer(String customerCode) {
 		InteractionSession session = DefaultInteractionSession.newSession();
 		session.registerHandler("application/atom+xml", AtomPayloadHandler.class)
-				.basicAuth("INPUTT", "123456")
+				.basicAuth("add_valid_user", "add_valid_pwd")
 				.header("Content-Type", "application/atom+xml")
 				.header("Accept", "application/atom+xml")
 				.url()
@@ -79,7 +79,7 @@ public class Customer {
 		if(200 == session.result().code()) {
 			session.reuse()
 				.header("If-Match", etag)
-				.basicAuth("AUTHOR", "123456")
+				.basicAuth("add_valid_user", "add_valid_pwd")
 				.links()
 				.byRel("http://temenostech.temenos.com/rels/authorise")
 				.url()
@@ -95,7 +95,7 @@ public class Customer {
 	public void updateCustomer(String customerCode ) {
 		InteractionSession session = DefaultInteractionSession.newSession();
 		session.registerHandler("application/atom+xml", AtomPayloadHandler.class)
-				.basicAuth("INPUTT", "123456")
+				.basicAuth("add_valid_user", "add_valid_pwd")
 				.header("Content-Type", "application/atom+xml")
 				.header("Accept", "application/atom+xml")
 				.url()
